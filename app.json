@@ -1,0 +1,171 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.krielkip.precom",
+  "version": "1.0.5",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "PreCom",
+    "nl": "PreCom"
+  },
+  "description": {
+    "en": "Always prepared and available",
+    "nl": "Altijd voorbereid en beschikbaar"
+  },
+  "support": "https://community.homey.app/t/app-pro-nl-precom-app/86435",
+  "tags": {
+    "en": [
+      "P2000",
+      "Precom",
+      "Firefighter"
+    ],
+    "nl": [
+      "P2000",
+      "Precom",
+      "Brandweer"
+    ]
+  },
+  "category": [
+    "tools"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.jpg",
+    "large": "/assets/images/large.jpg",
+    "xlarge": "/assets/images/xlarge.jpg"
+  },
+  "brandColor": "#8b0000",
+  "author": {
+    "name": "Jack Krielen"
+  },
+  "api": {
+    "homeyId": {
+      "method": "get",
+      "path": "/"
+    },
+    "getLogs": {
+      "method": "get",
+      "path": "/getlogs"
+    },
+    "deleteLogs": {
+      "method": "get",
+      "path": "/deletelogs"
+    }
+  },
+  "flow": {
+    "triggers": [
+      {
+        "title": {
+          "en": "A p2000 notification is received",
+          "nl": "Een P2000 melding is ontvangen"
+        },
+        "hint": {
+          "en": "When PreCom sends out a notification, this trigger is being used",
+          "nl": "Wanneer jouw PreCom pager een melding ontvangt, wordt deze trigger aangeroepen"
+        },
+        "tokens": [
+          {
+            "type": "string",
+            "name": "message",
+            "title": {
+              "en": "Message",
+              "nl": "Melding"
+            },
+            "titleFormatted": {
+              "en": "Alarm [[message]]",
+              "nl": "Melding [[message]]"
+            },
+            "example": {
+              "en": "Fire inside Building Testroad Zevenbergen 201139",
+              "nl": "Brand Binnen Woning Testweg Zevenbergen 201139"
+            }
+          },
+          {
+            "type": "string",
+            "name": "pagertext",
+            "title": {
+              "en": "Pager Text",
+              "nl": "Pager tekst"
+            },
+            "titleFormatted": {
+              "en": "Pager Text: [[pagertext]]",
+              "nl": "Pager Tekst: [[pagertext]]"
+            },
+            "example": {
+              "en": "P 1 BZB-01 Fire inside Building Testroad Zevenbergen 201139 [BBM-BEZ-TS-ZVB]",
+              "nl": "P 1 BZB-01 Brand Binnen Woning Testweg Zevenbergen 201139 [BBM-BEZ-TS-ZVB]"
+            }
+          },
+          {
+            "type": "number",
+            "name": "prio",
+            "title": {
+              "en": "Prio",
+              "nl": "Prio"
+            },
+            "titleFormatted": {
+              "en": "Prio [[prio]]",
+              "nl": "Prio [[prio]]"
+            },
+            "example": {
+              "en": "1",
+              "nl": "1"
+            }
+          },
+          {
+            "type": "string",
+            "name": "capcode",
+            "title": {
+              "en": "Capcode",
+              "nl": "Capcode"
+            },
+            "titleFormatted": {
+              "en": "Alarm for [[capcode]]",
+              "nl": "Melding voor group [[capcode]]"
+            },
+            "example": {
+              "en": "BBM-BEZ-TS-ZVB",
+              "nl": "BBM-BEZ-TS-ZVB"
+            }
+          },
+          {
+            "type": "string",
+            "name": "communicationgroup",
+            "title": {
+              "en": "Communicationgroup",
+              "nl": "Gespreksgroep"
+            },
+            "titleFormatted": {
+              "en": "Switch to [[communicationgroup]]",
+              "nl": "Schakel naar [[communicationgroup]]"
+            },
+            "example": {
+              "en": "BZB-01",
+              "nl": "BZB-01"
+            }
+          },
+          {
+            "type": "string",
+            "name": "cars",
+            "title": {
+              "en": "Cars",
+              "nl": "Voertuigen"
+            },
+            "titleFormatted": {
+              "en": "Dispatched Cars [[cars]]",
+              "nl": "Opgeroepen voertuigen [[cars]]"
+            },
+            "example": {
+              "en": "201131,201139",
+              "nl": "201131,201139"
+            }
+          }
+        ],
+        "id": "precom-trigger"
+      }
+    ]
+  }
+}

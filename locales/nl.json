@@ -1,0 +1,9 @@
+{
+  "settings": {
+    "title": "Logs",
+    "logs": "Logs",
+    "deletelogs": "Verwijder logs",
+    "deleteWarning": "Verwijder alle logs?",
+    "deleted": "Logs verwijderd!"
+  }
+}

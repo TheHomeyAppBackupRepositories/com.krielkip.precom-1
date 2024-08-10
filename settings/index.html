@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- The '/homey.js' script must be included in your settings view to work -->
+    <script
+            type="text/javascript"
+            src="/homey.js"
+            data-origin="settings"
+    ></script>
+    <script type="text/javascript" src="settings.js" data-origin="settings"></script>
+</head>
+<body>
+<h1 data-i18n="settings.title">
+    PreCom Webhook settings
+</h1>
+<p data-i18n="settings.subtitle">
+    Copy the webhook url below and paste it in your PreCom app.
+</p>
+
+<p><b data-i18n="settings.subtitle">Your webhook:</b> <input id="webhook" type="text" value="Loading" />
+</p>
+
+<p><b>Log latest alert:</b><br></p>
+<div id="log"></div>
+<button id="deleteButton" class="btn" onclick="deleteLogs()" data-i18n="settings.deletelogs">Delete Logs</button>
+</body>
+</html>
